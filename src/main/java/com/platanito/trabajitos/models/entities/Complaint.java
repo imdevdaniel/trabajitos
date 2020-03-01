@@ -1,4 +1,4 @@
-package com.platanito.trabajitos.model.entities;
+package com.platanito.trabajitos.models.entities;
 
 import java.util.Date;
 import javax.persistence.Column;
@@ -9,8 +9,8 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="complaints")
-public class Complaints {
-
+public class Complaint {
+	
 	@Id
 	@Column(length=16)
 	private Long id;
@@ -20,5 +20,5 @@ public class Complaints {
 	private Date date;
 	private String comment;
 	private Date viewed;
-	
+
 }
