@@ -1,22 +1,43 @@
 package com.platanito.trabajitos.models.entities;
 
-import javax.persistence.Column;
+//Segun Guia
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
+
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+
+//Otros
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Column;
+import java.util.Date;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+
+import org.springframework.format.annotation.DateTimeFormat;
 
 
 @Entity
 @Table(name="roles")
-public class Role {
+public class Role implements Serializable{
 
+	private static final long serialVersionUID = 1L;
+	
 	@Id
 	@Column(length=16)
+	@GenerateValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
+	@NotEmpty
 	private String title;
+	
 	private String description;
+	
 	private Integer erased;
+	
 	@Column(length=16, name="erased_by")
 	private Long erasedBy;
 	
