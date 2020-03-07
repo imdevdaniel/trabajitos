@@ -20,7 +20,7 @@ import javax.persistence.GenerationType;
 
 @Entity
 @Table(name="documents")
-public class Document implements Serializable{
+public class Document implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
 

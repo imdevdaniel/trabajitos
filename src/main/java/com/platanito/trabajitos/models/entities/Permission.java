@@ -20,7 +20,7 @@ import javax.persistence.GenerationType;
 
 @Entity
 @Table(name="permissions")
-public class Permission implements Serializable{
+public class Permission implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
 

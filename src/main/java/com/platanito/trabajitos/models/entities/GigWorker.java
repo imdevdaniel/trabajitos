@@ -21,7 +21,7 @@ import javax.persistence.GenerationType;
 
 @Entity
 @Table(name="gig_workers")
-public class GigWorker implements Serializable{
+public class GigWorker implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
 

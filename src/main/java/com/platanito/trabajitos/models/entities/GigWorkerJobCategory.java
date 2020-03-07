@@ -20,7 +20,7 @@ import javax.persistence.GenerationType;
 
 @Entity
 @Table(name="gig_worker_job_category")
-public class GigWorkerJobCategory implements Serializable{
+public class GigWorkerJobCategory implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
 

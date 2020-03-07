@@ -25,7 +25,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
 @Table(name="reviews")
-public class Review implements Serializable{
+public class Review implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
 

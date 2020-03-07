@@ -15,7 +15,7 @@ import javax.persistence.GenerationType;
 
 @Entity
 @Table(name="job_categories")
-public class JobCategory implements Serializable{
+public class JobCategory implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
 	
