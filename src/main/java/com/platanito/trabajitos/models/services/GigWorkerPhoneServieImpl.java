@@ -7,28 +7,28 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.platanito.trabajitos.models.entities.GigWorkerPhone;
-import com.platanito.trabajitos.models.repository.AgreementRepository;
+import com.platanito.trabajitos.models.repository.GigWorkerPhoneRepository;
 
 
 @Service
-public class GigWorkerPhoneServieImpl implements AgreementService {
+public class GigWorkerPhoneServieImpl implements GigWorkerPhoneService {
 
 	@Autowired
-	public AgreementRepository repository;
+	public GigWorkerPhoneRepository repository;
 	
-	public List<Agreement> findAll() {
-		return (List<Agreement>) repository.findAll();
+	public List<GigWorkerPhone> findAll() {
+		return (List<GigWorkerPhone>) repository.findAll();
 	}
 	
-	public Agreement save(Agreement entity) {
+	public GigWorkerPhone save(GigWorkerPhone entity) {
 		return repository.save(entity);
 	}
 	
-	public Optional<Agreement> findById(Long id) {
+	public Optional<GigWorkerPhone> findById(Long id) {
 		return repository.findById(id);
 	}
 	
-	public void delete(Agreement entity) {
+	public void delete(GigWorkerPhone entity) {
 		repository.delete(entity);
 	};
 
