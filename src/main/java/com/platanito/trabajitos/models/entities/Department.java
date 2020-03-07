@@ -8,9 +8,6 @@ import javax.persistence.Table;
 import javax.persistence.Column;
 
 import java.io.Serializable;
-import java.util.Date;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 import javax.validation.constraints.NotEmpty;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
