@@ -11,9 +11,12 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Column;
+
+import java.io.Serializable;
 import java.util.Date;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.constraints.NotEmpty;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 
@@ -22,13 +25,13 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
 @Table(name="reviews")
-public class Review implements Serializable{
+public class Review implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
 
 	@Id
 	@Column(length=16)
-	@GenerateValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
 	@NotEmpty

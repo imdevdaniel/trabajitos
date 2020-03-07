@@ -11,6 +11,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Column;
+
+import java.io.Serializable;
 import java.util.Date;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -22,7 +24,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
 @Table(name="agreements")
-public class Agreement implements Serializable{
+public class Agreement implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
 	
