@@ -11,13 +11,11 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Column;
-import java.util.Date;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
+
+import java.io.Serializable;
+import javax.validation.constraints.NotEmpty;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
-
-import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
 @Table(name="users")
@@ -27,7 +25,7 @@ public class User implements Serializable{
 	
 	@Id
 	@Column(length=16)
-	@GenerateValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
 	@NotEmpty
@@ -43,6 +41,7 @@ public class User implements Serializable{
 	@JoinColumn(name = "role_id", nullable=false)
 	private Role role;
 	
+	@SuppressWarnings("unused")
 	private Integer erased;
 	
 	@Column(length=16, name="erased_by")

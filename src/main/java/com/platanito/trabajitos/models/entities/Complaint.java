@@ -11,6 +11,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Column;
+
+import java.io.Serializable;
 import java.util.Date;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -28,7 +30,7 @@ public class Complaint  implements Serializable{
 	
 	@Id
 	@Column(length=16)
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
 //	@Column(length=16, name="agreement_id")
@@ -42,7 +44,8 @@ public class Complaint  implements Serializable{
 	@DateTimeFormat(pattern="yyyy-MM-dd")
 	private Date date;
 	
-	private String comment;
+	@SuppressWarnings("unused")
+	private String commentt;
 	
 	@Temporal(TemporalType.DATE)
 	@DateTimeFormat(pattern="yyyy-MM-dd")

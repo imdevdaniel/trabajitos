@@ -11,13 +11,12 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Column;
+
+import java.io.Serializable;
 import java.util.Date;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
+import javax.validation.constraints.NotEmpty;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
-
-import org.springframework.format.annotation.DateTimeFormat;
 
 
 @Entity
@@ -28,7 +27,7 @@ public class GigWorker implements Serializable{
 
 	@Id
 	@Column(length=16)
-	@GenerateValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
 	@Column(length=128, name="first_name")
@@ -53,7 +52,10 @@ public class GigWorker implements Serializable{
 	@JoinColumn(name = "department_id", nullable=false)
 	private Department department;
 	
+	@SuppressWarnings("unused")
 	private String address;
+	
+	@SuppressWarnings("unused")
 	private String states;
 	
 	@NotEmpty
@@ -62,7 +64,10 @@ public class GigWorker implements Serializable{
 	@NotEmpty
 	private String password;
 	
+	@SuppressWarnings("unused")
 	private String photo;
+	
+	@SuppressWarnings("unused")
 	private Integer erased;
 	
 }

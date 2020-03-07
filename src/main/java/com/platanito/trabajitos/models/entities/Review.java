@@ -11,9 +11,12 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Column;
+
+import java.io.Serializable;
 import java.util.Date;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.constraints.NotEmpty;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 
@@ -28,12 +31,13 @@ public class Review implements Serializable{
 
 	@Id
 	@Column(length=16)
-	@GenerateValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
 	@NotEmpty
 	private Integer score;
 	
+	@SuppressWarnings("unused")
 	private String comment;
 	
 	@Temporal(TemporalType.DATE)

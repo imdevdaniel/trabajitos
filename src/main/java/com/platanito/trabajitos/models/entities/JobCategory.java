@@ -2,22 +2,15 @@ package com.platanito.trabajitos.models.entities;
 
 //Segun Guia
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
-
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-
 //Otros
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Column;
-import java.util.Date;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
+
+import java.io.Serializable;
+import javax.validation.constraints.NotEmpty;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
-
-import org.springframework.format.annotation.DateTimeFormat;
 
 
 @Entity
@@ -28,7 +21,7 @@ public class JobCategory implements Serializable{
 	
 	@Id
 	@Column(length=16)
-	@GenerateValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
 	@NotEmpty
@@ -37,6 +30,7 @@ public class JobCategory implements Serializable{
 	@NotEmpty
 	private String icon;
 	
+	@SuppressWarnings("unused")
 	private Integer erased;
 
 }
