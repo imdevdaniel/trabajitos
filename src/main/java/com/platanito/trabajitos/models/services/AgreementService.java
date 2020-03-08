@@ -14,5 +14,7 @@ public interface AgreementService {
 	public Optional<Agreement> findById(Long id);
 	
 	public void delete(Agreement entity);
+
+	public void deleteById(Long id);
 	
 }

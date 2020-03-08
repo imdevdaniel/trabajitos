@@ -14,5 +14,7 @@ public interface PermissionService {
 	public Optional<Permission> findById(Long id);
 	
 	public void delete(Permission entity);
+
+	public void deleteById(Long id);
 	
 }

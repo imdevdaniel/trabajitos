@@ -14,5 +14,7 @@ public interface DocumentService {
 	public Optional<Document> findById(Long id);
 	
 	public void delete(Document entity);
+
+	public void deleteById(Long id);
 	
 }

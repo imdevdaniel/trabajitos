@@ -14,5 +14,7 @@ public interface GigWorkerJobCategoryService {
 	public Optional<GigWorkerJobCategory> findById(Long id);
 	
 	public void delete(GigWorkerJobCategory entity);
+
+	public void deleteById(Long id);
 	
 }

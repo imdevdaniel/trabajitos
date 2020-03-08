@@ -14,5 +14,7 @@ public interface ReviewService {
 	public Optional<Review> findById(Long id);
 	
 	public void delete(Review entity);
+
+	public void deleteById(Long id);
 	
 }

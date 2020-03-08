@@ -15,4 +15,6 @@ public interface ComponentService {
 	
 	public void delete(Component entity);
 	
+	public void deleteById(Long id);
+	
 }

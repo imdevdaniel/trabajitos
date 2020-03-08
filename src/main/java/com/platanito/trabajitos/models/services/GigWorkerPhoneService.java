@@ -14,5 +14,7 @@ public interface GigWorkerPhoneService {
 	public Optional<GigWorkerPhone> findById(Long id);
 	
 	public void delete(GigWorkerPhone entity);
+
+	public void deleteById(Long id);
 	
 }

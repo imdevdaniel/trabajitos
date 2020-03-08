@@ -15,4 +15,6 @@ public interface ComplaintService {
 	
 	public void delete(Complaint entity);
 	
+	public void deleteById(Long id);
+	
 }

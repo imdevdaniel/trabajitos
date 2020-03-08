@@ -14,5 +14,7 @@ public interface RoleService {
 	public Optional<Role> findById(Long id);
 	
 	public void delete(Role entity);
+
+	public void deleteById(Long id);
 	
 }

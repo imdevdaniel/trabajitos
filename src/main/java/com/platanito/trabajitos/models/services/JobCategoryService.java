@@ -14,5 +14,7 @@ public interface JobCategoryService {
 	public Optional<JobCategory> findById(Long id);
 	
 	public void delete(JobCategory entity);
+
+	public void deleteById(Long id);
 	
 }

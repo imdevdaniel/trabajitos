@@ -14,5 +14,7 @@ public interface DepartmentService {
 	public Optional<Department> findById(Long id);
 	
 	public void delete(Department entity);
+
+	public void deleteById(Long id);
 	
 }

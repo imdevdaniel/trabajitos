@@ -14,5 +14,7 @@ public interface CustomerService {
 	public Optional<Customer> findById(Long id);
 	
 	public void delete(Customer entity);
+
+	public void deleteById(Long id);
 	
 }

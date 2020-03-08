@@ -14,5 +14,7 @@ public interface MessageService {
 	public Optional<Message> findById(Long id);
 	
 	public void delete(Message entity);
+
+	public void deleteById(Long id);
 	
 }

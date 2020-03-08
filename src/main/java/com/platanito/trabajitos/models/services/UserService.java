@@ -14,5 +14,7 @@ public interface UserService {
 	public Optional<User> findById(Long id);
 	
 	public void delete(User entity);
+
+	public void deleteById(Long id);
 	
 }
