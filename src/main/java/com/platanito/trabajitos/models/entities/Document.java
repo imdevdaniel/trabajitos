@@ -50,5 +50,61 @@ public class Document implements Serializable {
 	
 	@SuppressWarnings("unused")
 	private Integer erased;
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getImage() {
+		return image;
+	}
+
+	public void setImage(String image) {
+		this.image = image;
+	}
+
+	public String getPath() {
+		return path;
+	}
+
+	public void setPath(String path) {
+		this.path = path;
+	}
+
+	public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+	}
+
+	public String getValue() {
+		return value;
+	}
+
+	public void setValue(String value) {
+		this.value = value;
+	}
+
+	public GigWorker getGigWorker() {
+		return gigWorker;
+	}
+
+	public void setGigWorker(GigWorker gigWorker) {
+		this.gigWorker = gigWorker;
+	}
+
+	public Integer getErased() {
+		return erased;
+	}
+
+	public void setErased(Integer erased) {
+		this.erased = erased;
+	}
 	
 }

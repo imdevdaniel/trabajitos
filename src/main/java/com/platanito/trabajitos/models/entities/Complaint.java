@@ -36,6 +36,46 @@ public class Complaint  implements Serializable {
 //	@Column(length=16, name="agreement_id")
 //	private Long agreementId;
 	
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public Agreement getAgreement() {
+		return agreement;
+	}
+
+	public void setAgreement(Agreement agreement) {
+		this.agreement = agreement;
+	}
+
+	public Date getDate() {
+		return date;
+	}
+
+	public void setDate(Date date) {
+		this.date = date;
+	}
+
+	public String getCommentt() {
+		return commentt;
+	}
+
+	public void setCommentt(String commentt) {
+		this.commentt = commentt;
+	}
+
+	public Date getViewed() {
+		return viewed;
+	}
+
+	public void setViewed(Date viewed) {
+		this.viewed = viewed;
+	}
+
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "agreement_id", nullable=false)
 	private Agreement agreement;

@@ -46,5 +46,37 @@ public class GigWorkerJobCategory implements Serializable {
 	@NotEmpty
 	@Column(name="hourly_rate")
 	private Float hourlyRate;
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public GigWorker getGigWorker() {
+		return gigWorker;
+	}
+
+	public void setGigWorker(GigWorker gigWorker) {
+		this.gigWorker = gigWorker;
+	}
+
+	public JobCategory getJobCategory() {
+		return jobCategory;
+	}
+
+	public void setJobCategory(JobCategory jobCategory) {
+		this.jobCategory = jobCategory;
+	}
+
+	public Float getHourlyRate() {
+		return hourlyRate;
+	}
+
+	public void setHourlyRate(Float hourlyRate) {
+		this.hourlyRate = hourlyRate;
+	}
 	
 }

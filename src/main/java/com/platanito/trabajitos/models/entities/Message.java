@@ -67,5 +67,77 @@ public class Message implements Serializable {
 
 	@Temporal(TemporalType.DATE)
 	private Date viewed;
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getContent() {
+		return content;
+	}
+
+	public void setContent(String content) {
+		this.content = content;
+	}
+
+	public Date getDate() {
+		return date;
+	}
+
+	public void setDate(Date date) {
+		this.date = date;
+	}
+
+	public Date getTimestamp() {
+		return timestamp;
+	}
+
+	public void setTimestamp(Date timestamp) {
+		this.timestamp = timestamp;
+	}
+
+	public Customer getCustomer() {
+		return customer;
+	}
+
+	public void setCustomer(Customer customer) {
+		this.customer = customer;
+	}
+
+	public GigWorker getGigWorker() {
+		return gigWorker;
+	}
+
+	public void setGigWorker(GigWorker gigWorker) {
+		this.gigWorker = gigWorker;
+	}
+
+	public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+	}
+
+	public String getSender() {
+		return sender;
+	}
+
+	public void setSender(String sender) {
+		this.sender = sender;
+	}
+
+	public Date getViewed() {
+		return viewed;
+	}
+
+	public void setViewed(Date viewed) {
+		this.viewed = viewed;
+	}
 	
 }

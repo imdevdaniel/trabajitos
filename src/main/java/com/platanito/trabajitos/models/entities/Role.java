@@ -35,5 +35,45 @@ public class Role implements Serializable {
 	
 	@Column(length=16, name="erased_by")
 	private Long erasedBy;
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getTitle() {
+		return title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public Integer getErased() {
+		return erased;
+	}
+
+	public void setErased(Integer erased) {
+		this.erased = erased;
+	}
+
+	public Long getErasedBy() {
+		return erasedBy;
+	}
+
+	public void setErasedBy(Long erasedBy) {
+		this.erasedBy = erasedBy;
+	}
 	
 }

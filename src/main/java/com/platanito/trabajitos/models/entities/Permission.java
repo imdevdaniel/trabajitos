@@ -44,5 +44,37 @@ public class Permission implements Serializable {
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "component_id", nullable=false)
 	private Component component;
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+	}
+
+	public Role getRole() {
+		return role;
+	}
+
+	public void setRole(Role role) {
+		this.role = role;
+	}
+
+	public Component getComponent() {
+		return component;
+	}
+
+	public void setComponent(Component component) {
+		this.component = component;
+	}
 	
 }

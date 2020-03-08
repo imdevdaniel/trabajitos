@@ -51,7 +51,47 @@ public class Agreement implements Serializable {
 	@DateTimeFormat(pattern="yyyy-MM-dd")
 	private Date date;
 	
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public Customer getCustomer() {
+		return customer;
+	}
+
+	public void setCustomer(Customer customer) {
+		this.customer = customer;
+	}
+
+	public GigWorker getGigWorker() {
+		return gigWorker;
+	}
+
+	public void setGigWorker(GigWorker gigWorker) {
+		this.gigWorker = gigWorker;
+	}
+
+	public Date getDate() {
+		return date;
+	}
+
+	public void setDate(Date date) {
+		this.date = date;
+	}
+
 	@Column(name="state")
 	private String state;
+
+	public String getState() {
+		return state;
+	}
+
+	public void setState(String state) {
+		this.state = state;
+	}
 
 }
