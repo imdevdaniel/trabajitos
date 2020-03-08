@@ -32,4 +32,7 @@ public class DocumentServiceImpl implements DocumentService {
 		repository.delete(entity);
 	};
 
+	public void deleteById(Long id) {
+		repository.deleteById(id);
+	};
 }

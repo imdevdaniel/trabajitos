@@ -32,4 +32,7 @@ public class CustomerServiceImpl implements CustomerService {
 		repository.delete(entity);
 	};
 
+	public void deleteById(Long id) {
+		repository.deleteById(id);
+	};
 }

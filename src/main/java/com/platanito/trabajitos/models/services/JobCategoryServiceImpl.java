@@ -32,4 +32,7 @@ public class JobCategoryServiceImpl implements JobCategoryService {
 		repository.delete(entity);
 	};
 
+	public void deleteById(Long id) {
+		repository.deleteById(id);
+	};
 }

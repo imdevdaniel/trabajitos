@@ -32,4 +32,7 @@ public class UserServiceImpl implements UserService {
 		repository.delete(entity);
 	};
 
+	public void deleteById(Long id) {
+		repository.deleteById(id);
+	};
 }

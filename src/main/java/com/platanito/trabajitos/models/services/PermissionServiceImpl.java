@@ -32,4 +32,7 @@ public class PermissionServiceImpl implements PermissionService {
 		repository.delete(entity);
 	};
 
+	public void deleteById(Long id) {
+		repository.deleteById(id);
+	};
 }

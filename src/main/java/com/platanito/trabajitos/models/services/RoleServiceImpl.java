@@ -32,4 +32,7 @@ public class RoleServiceImpl implements RoleService {
 		repository.delete(entity);
 	};
 
+	public void deleteById(Long id) {
+		repository.deleteById(id);
+	};
 }

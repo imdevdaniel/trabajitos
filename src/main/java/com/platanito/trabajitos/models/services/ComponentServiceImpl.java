@@ -32,4 +32,7 @@ public class ComponentServiceImpl implements ComponentService {
 		repository.delete(entity);
 	};
 
+	public void deleteById(Long id) {
+		repository.deleteById(id);
+	};
 }

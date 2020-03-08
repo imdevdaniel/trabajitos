@@ -32,4 +32,7 @@ public class GigWorkerPhoneServieImpl implements GigWorkerPhoneService {
 		repository.delete(entity);
 	};
 
+	public void deleteById(Long id) {
+		repository.deleteById(id);
+	};
 }

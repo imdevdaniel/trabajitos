@@ -32,4 +32,7 @@ public class ReviewServiceImpl implements ReviewService {
 		repository.delete(entity);
 	};
 
+	public void deleteById(Long id) {
+		repository.deleteById(id);
+	};
 }

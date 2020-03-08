@@ -31,5 +31,9 @@ public class ComplaintServiceImpl implements ComplaintService {
 	public void delete(Complaint entity) {
 		repository.delete(entity);
 	};
+	
+	public void deleteById(Long id) {
+		repository.deleteById(id);
+	};
 
 }

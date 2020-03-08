@@ -32,4 +32,7 @@ public class DepartmentServiceImpl implements DepartmentService {
 		repository.delete(entity);
 	};
 
+	public void deleteById(Long id) {
+		repository.deleteById(id);
+	};
 }

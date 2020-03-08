@@ -32,4 +32,7 @@ public class MessageServiceImpl implements MessageService {
 		repository.delete(entity);
 	};
 
+	public void deleteById(Long id) {
+		repository.deleteById(id);
+	};
 }

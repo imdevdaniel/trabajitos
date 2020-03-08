@@ -31,5 +31,9 @@ public class AgreementServiceImpl implements AgreementService {
 	public void delete(Agreement entity) {
 		repository.delete(entity);
 	};
+	
+	public void deleteById(Long id) {
+		repository.deleteById(id);
+	};
 
 }
