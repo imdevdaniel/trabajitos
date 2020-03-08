@@ -8,35 +8,35 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.platanito.trabajitos.models.services.ComponentService;
-import com.platanito.trabajitos.models.entities.Component;
+import com.platanito.trabajitos.models.services.ComplaintService;
+import com.platanito.trabajitos.models.entities.Complaint;
 
 
 @RestController
-@RequestMapping("/api/v1/component")
-public class ComponentController {
+@RequestMapping("/api/v1/complaint")
+public class ComplaintController {
 	
 	@Autowired
-	private ComponentService componentService;
+	private ComplaintService ComplaintService;
 	
 	@RequestMapping(value="/list", method=RequestMethod.GET)
-	public List<Component> getList() {
-		return (List<Component>) componentService.findAll() ;
+	public List<Complaint> getList() {
+		return (List<Complaint>) ComplaintService.findAll() ;
 	}
 	
 	@RequestMapping(value="/find-single", method=RequestMethod.GET)
-	public Optional<Component> findById(Long id) {
-		return componentService.findById(id);
+	public Optional<Complaint> findById(Long id) {
+		return ComplaintService.findById(id);
 	}
 	
 	@RequestMapping(value="/save", method=RequestMethod.POST)
-	public Component save(Component entity) {
-		return componentService.save(entity);
+	public Complaint save(Complaint entity) {
+		return ComplaintService.save(entity);
 	}
 	
 	@RequestMapping(value="/delete", method=RequestMethod.DELETE)
 	public void deleteById(Long id) {
-		componentService.deleteById(id);
+		ComplaintService.deleteById(id);
 	}
 
 }

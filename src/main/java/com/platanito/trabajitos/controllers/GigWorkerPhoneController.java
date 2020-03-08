@@ -8,35 +8,35 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.platanito.trabajitos.models.services.ComponentService;
-import com.platanito.trabajitos.models.entities.Component;
+import com.platanito.trabajitos.models.services.GigWorkerPhoneService;
+import com.platanito.trabajitos.models.entities.GigWorkerPhone;
 
 
 @RestController
-@RequestMapping("/api/v1/component")
-public class ComponentController {
+@RequestMapping("/api/v1/gig-worker-phone")
+public class GigWorkerPhoneController {
 	
 	@Autowired
-	private ComponentService componentService;
+	private GigWorkerPhoneService GigWorkerPhoneService;
 	
 	@RequestMapping(value="/list", method=RequestMethod.GET)
-	public List<Component> getList() {
-		return (List<Component>) componentService.findAll() ;
+	public List<GigWorkerPhone> getList() {
+		return (List<GigWorkerPhone>) GigWorkerPhoneService.findAll() ;
 	}
 	
 	@RequestMapping(value="/find-single", method=RequestMethod.GET)
-	public Optional<Component> findById(Long id) {
-		return componentService.findById(id);
+	public Optional<GigWorkerPhone> findById(Long id) {
+		return GigWorkerPhoneService.findById(id);
 	}
 	
 	@RequestMapping(value="/save", method=RequestMethod.POST)
-	public Component save(Component entity) {
-		return componentService.save(entity);
+	public GigWorkerPhone save(GigWorkerPhone entity) {
+		return GigWorkerPhoneService.save(entity);
 	}
 	
 	@RequestMapping(value="/delete", method=RequestMethod.DELETE)
 	public void deleteById(Long id) {
-		componentService.deleteById(id);
+		GigWorkerPhoneService.deleteById(id);
 	}
 
 }

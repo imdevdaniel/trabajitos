@@ -14,7 +14,7 @@ import com.platanito.trabajitos.models.entities.Component;
 
 @RestController
 @RequestMapping("/api/v1/component")
-public class ComponentController {
+public class PermissionController {
 	
 	@Autowired
 	private ComponentService componentService;

@@ -8,35 +8,35 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.platanito.trabajitos.models.services.ComponentService;
-import com.platanito.trabajitos.models.entities.Component;
+import com.platanito.trabajitos.models.services.DocumentService;
+import com.platanito.trabajitos.models.entities.Document;
 
 
 @RestController
-@RequestMapping("/api/v1/component")
-public class ComponentController {
+@RequestMapping("/api/v1/document")
+public class DocumentController {
 	
 	@Autowired
-	private ComponentService componentService;
+	private DocumentService DocumentService;
 	
 	@RequestMapping(value="/list", method=RequestMethod.GET)
-	public List<Component> getList() {
-		return (List<Component>) componentService.findAll() ;
+	public List<Document> getList() {
+		return (List<Document>) DocumentService.findAll() ;
 	}
 	
 	@RequestMapping(value="/find-single", method=RequestMethod.GET)
-	public Optional<Component> findById(Long id) {
-		return componentService.findById(id);
+	public Optional<Document> findById(Long id) {
+		return DocumentService.findById(id);
 	}
 	
 	@RequestMapping(value="/save", method=RequestMethod.POST)
-	public Component save(Component entity) {
-		return componentService.save(entity);
+	public Document save(Document entity) {
+		return DocumentService.save(entity);
 	}
 	
 	@RequestMapping(value="/delete", method=RequestMethod.DELETE)
 	public void deleteById(Long id) {
-		componentService.deleteById(id);
+		DocumentService.deleteById(id);
 	}
 
 }

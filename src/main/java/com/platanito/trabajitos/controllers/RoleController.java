@@ -8,35 +8,35 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.platanito.trabajitos.models.services.ComponentService;
-import com.platanito.trabajitos.models.entities.Component;
+import com.platanito.trabajitos.models.services.RoleService;
+import com.platanito.trabajitos.models.entities.Role;
 
 
 @RestController
-@RequestMapping("/api/v1/component")
-public class ComponentController {
+@RequestMapping("/api/v1/role")
+public class RoleController {
 	
 	@Autowired
-	private ComponentService componentService;
+	private RoleService RoleService;
 	
 	@RequestMapping(value="/list", method=RequestMethod.GET)
-	public List<Component> getList() {
-		return (List<Component>) componentService.findAll() ;
+	public List<Role> getList() {
+		return (List<Role>) RoleService.findAll() ;
 	}
 	
 	@RequestMapping(value="/find-single", method=RequestMethod.GET)
-	public Optional<Component> findById(Long id) {
-		return componentService.findById(id);
+	public Optional<Role> findById(Long id) {
+		return RoleService.findById(id);
 	}
 	
 	@RequestMapping(value="/save", method=RequestMethod.POST)
-	public Component save(Component entity) {
-		return componentService.save(entity);
+	public Role save(Role entity) {
+		return RoleService.save(entity);
 	}
 	
 	@RequestMapping(value="/delete", method=RequestMethod.DELETE)
 	public void deleteById(Long id) {
-		componentService.deleteById(id);
+		RoleService.deleteById(id);
 	}
 
 }

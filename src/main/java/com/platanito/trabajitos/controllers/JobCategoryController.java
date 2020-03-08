@@ -8,35 +8,35 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.platanito.trabajitos.models.services.ComponentService;
-import com.platanito.trabajitos.models.entities.Component;
+import com.platanito.trabajitos.models.services.JobCategoryService;
+import com.platanito.trabajitos.models.entities.JobCategory;
 
 
 @RestController
-@RequestMapping("/api/v1/component")
-public class ComponentController {
+@RequestMapping("/api/v1/job-category")
+public class JobCategoryController {
 	
 	@Autowired
-	private ComponentService componentService;
+	private JobCategoryService JobCategoryService;
 	
 	@RequestMapping(value="/list", method=RequestMethod.GET)
-	public List<Component> getList() {
-		return (List<Component>) componentService.findAll() ;
+	public List<JobCategory> getList() {
+		return (List<JobCategory>) JobCategoryService.findAll() ;
 	}
 	
 	@RequestMapping(value="/find-single", method=RequestMethod.GET)
-	public Optional<Component> findById(Long id) {
-		return componentService.findById(id);
+	public Optional<JobCategory> findById(Long id) {
+		return JobCategoryService.findById(id);
 	}
 	
 	@RequestMapping(value="/save", method=RequestMethod.POST)
-	public Component save(Component entity) {
-		return componentService.save(entity);
+	public JobCategory save(JobCategory entity) {
+		return JobCategoryService.save(entity);
 	}
 	
 	@RequestMapping(value="/delete", method=RequestMethod.DELETE)
 	public void deleteById(Long id) {
-		componentService.deleteById(id);
+		JobCategoryService.deleteById(id);
 	}
 
 }
