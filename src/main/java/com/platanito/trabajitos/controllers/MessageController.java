@@ -17,26 +17,26 @@ import com.platanito.trabajitos.models.entities.Message;
 public class MessageController {
 	
 	@Autowired
-	private MessageService MessageService;
+	private MessageService messageService;
 	
-	@RequestMapping(value="/list", method=RequestMethod.GET)
+	@RequestMapping(value="", method=RequestMethod.GET)
 	public List<Message> getList() {
-		return (List<Message>) MessageService.findAll() ;
+		return (List<Message>) messageService.findAll() ;
 	}
 	
-	@RequestMapping(value="/find-single", method=RequestMethod.GET)
+	@RequestMapping(value="{id}", method=RequestMethod.GET)
 	public Optional<Message> findById(Long id) {
-		return MessageService.findById(id);
+		return messageService.findById(id);
 	}
 	
-	@RequestMapping(value="/save", method=RequestMethod.POST)
+	@RequestMapping(value="", method=RequestMethod.POST)
 	public Message save(Message entity) {
-		return MessageService.save(entity);
+		return messageService.save(entity);
 	}
 	
-	@RequestMapping(value="/delete", method=RequestMethod.DELETE)
+	@RequestMapping(value="{id}", method=RequestMethod.DELETE)
 	public void deleteById(Long id) {
-		MessageService.deleteById(id);
+		messageService.deleteById(id);
 	}
 
 }

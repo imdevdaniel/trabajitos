@@ -17,26 +17,26 @@ import com.platanito.trabajitos.models.entities.Department;
 public class DepartmentController {
 	
 	@Autowired
-	private DepartmentService DepartmentService;
+	private DepartmentService departmentService;
 	
-	@RequestMapping(value="/list", method=RequestMethod.GET)
+	@RequestMapping(value="", method=RequestMethod.GET)
 	public List<Department> getList() {
-		return (List<Department>) DepartmentService.findAll() ;
+		return (List<Department>) departmentService.findAll() ;
 	}
 	
-	@RequestMapping(value="/find-single", method=RequestMethod.GET)
+	@RequestMapping(value="{id}", method=RequestMethod.GET)
 	public Optional<Department> findById(Long id) {
-		return DepartmentService.findById(id);
+		return departmentService.findById(id);
 	}
 	
-	@RequestMapping(value="/save", method=RequestMethod.POST)
+	@RequestMapping(value="", method=RequestMethod.POST)
 	public Department save(Department entity) {
-		return DepartmentService.save(entity);
+		return departmentService.save(entity);
 	}
 	
-	@RequestMapping(value="/delete", method=RequestMethod.DELETE)
+	@RequestMapping(value="{id}", method=RequestMethod.DELETE)
 	public void deleteById(Long id) {
-		DepartmentService.deleteById(id);
+		departmentService.deleteById(id);
 	}
 
 }

@@ -17,26 +17,26 @@ import com.platanito.trabajitos.models.entities.Customer;
 public class CustomerController {
 	
 	@Autowired
-	private CustomerService CustomerService;
+	private CustomerService customerService;
 	
-	@RequestMapping(value="/list", method=RequestMethod.GET)
+	@RequestMapping(value="", method=RequestMethod.GET)
 	public List<Customer> getList() {
-		return (List<Customer>) CustomerService.findAll() ;
+		return (List<Customer>) customerService.findAll() ;
 	}
 	
-	@RequestMapping(value="/find-single", method=RequestMethod.GET)
+	@RequestMapping(value="{id}", method=RequestMethod.GET)
 	public Optional<Customer> findById(Long id) {
-		return CustomerService.findById(id);
+		return customerService.findById(id);
 	}
 	
-	@RequestMapping(value="/save", method=RequestMethod.POST)
+	@RequestMapping(value="", method=RequestMethod.POST)
 	public Customer save(Customer entity) {
-		return CustomerService.save(entity);
+		return customerService.save(entity);
 	}
 	
-	@RequestMapping(value="/delete", method=RequestMethod.DELETE)
+	@RequestMapping(value="{id}", method=RequestMethod.DELETE)
 	public void deleteById(Long id) {
-		CustomerService.deleteById(id);
+		customerService.deleteById(id);
 	}
 
 }

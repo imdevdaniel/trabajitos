@@ -17,26 +17,26 @@ import com.platanito.trabajitos.models.entities.GigWorkerJobCategory;
 public class GigWorkerJobCategoryController {
 	
 	@Autowired
-	private GigWorkerJobCategoryService GigWorkerJobCategoryService;
+	private GigWorkerJobCategoryService gigWorkerJobCategoryService;
 	
-	@RequestMapping(value="/list", method=RequestMethod.GET)
+	@RequestMapping(value="", method=RequestMethod.GET)
 	public List<GigWorkerJobCategory> getList() {
-		return (List<GigWorkerJobCategory>) GigWorkerJobCategoryService.findAll() ;
+		return (List<GigWorkerJobCategory>) gigWorkerJobCategoryService.findAll() ;
 	}
 	
-	@RequestMapping(value="/find-single", method=RequestMethod.GET)
+	@RequestMapping(value="{id}", method=RequestMethod.GET)
 	public Optional<GigWorkerJobCategory> findById(Long id) {
-		return GigWorkerJobCategoryService.findById(id);
+		return gigWorkerJobCategoryService.findById(id);
 	}
 	
-	@RequestMapping(value="/save", method=RequestMethod.POST)
+	@RequestMapping(value="", method=RequestMethod.POST)
 	public GigWorkerJobCategory save(GigWorkerJobCategory entity) {
-		return GigWorkerJobCategoryService.save(entity);
+		return gigWorkerJobCategoryService.save(entity);
 	}
 	
-	@RequestMapping(value="/delete", method=RequestMethod.DELETE)
+	@RequestMapping(value="{id}", method=RequestMethod.DELETE)
 	public void deleteById(Long id) {
-		GigWorkerJobCategoryService.deleteById(id);
+		gigWorkerJobCategoryService.deleteById(id);
 	}
 
 }

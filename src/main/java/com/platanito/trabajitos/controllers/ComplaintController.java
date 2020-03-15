@@ -17,26 +17,26 @@ import com.platanito.trabajitos.models.entities.Complaint;
 public class ComplaintController {
 	
 	@Autowired
-	private ComplaintService ComplaintService;
+	private ComplaintService complaintService;
 	
-	@RequestMapping(value="/list", method=RequestMethod.GET)
+	@RequestMapping(value="", method=RequestMethod.GET)
 	public List<Complaint> getList() {
-		return (List<Complaint>) ComplaintService.findAll() ;
+		return (List<Complaint>) complaintService.findAll() ;
 	}
 	
-	@RequestMapping(value="/find-single", method=RequestMethod.GET)
+	@RequestMapping(value="{id}", method=RequestMethod.GET)
 	public Optional<Complaint> findById(Long id) {
-		return ComplaintService.findById(id);
+		return complaintService.findById(id);
 	}
 	
-	@RequestMapping(value="/save", method=RequestMethod.POST)
+	@RequestMapping(value="", method=RequestMethod.POST)
 	public Complaint save(Complaint entity) {
-		return ComplaintService.save(entity);
+		return complaintService.save(entity);
 	}
 	
-	@RequestMapping(value="/delete", method=RequestMethod.DELETE)
+	@RequestMapping(value="{id}", method=RequestMethod.DELETE)
 	public void deleteById(Long id) {
-		ComplaintService.deleteById(id);
+		complaintService.deleteById(id);
 	}
 
 }
