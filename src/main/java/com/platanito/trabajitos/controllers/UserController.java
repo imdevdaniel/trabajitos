@@ -26,7 +26,7 @@ public class UserController {
 		return (List<User>) userService.findAll() ;
 	}
 	
-	@RequestMapping(value="{id}", method=RequestMethod.GET)
+	@RequestMapping(value="/{id}", method=RequestMethod.GET)
 	public Optional<User> findById(@PathVariable("id") Long id) {
 		return userService.findById(id);
 	}
@@ -36,7 +36,7 @@ public class UserController {
 		return userService.save(entity);
 	}
 	
-	@RequestMapping(value="{id}", method=RequestMethod.DELETE)
+	@RequestMapping(value="/{id}", method=RequestMethod.DELETE)
 	public void deleteById(@PathVariable("id") Long id) {
 		userService.deleteById(id);
 	}

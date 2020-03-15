@@ -26,7 +26,7 @@ public class ComplaintController {
 		return (List<Complaint>) complaintService.findAll() ;
 	}
 	
-	@RequestMapping(value="{id}", method=RequestMethod.GET)
+	@RequestMapping(value="/{id}", method=RequestMethod.GET)
 	public Optional<Complaint> findById(@PathVariable("id") Long id) {
 		return complaintService.findById(id);
 	}
@@ -36,7 +36,7 @@ public class ComplaintController {
 		return complaintService.save(entity);
 	}
 	
-	@RequestMapping(value="{id}", method=RequestMethod.DELETE)
+	@RequestMapping(value="/{id}", method=RequestMethod.DELETE)
 	public void deleteById(@PathVariable("id") Long id) {
 		complaintService.deleteById(id);
 	}

@@ -26,7 +26,7 @@ public class RoleController {
 		return (List<Role>) roleService.findAll() ;
 	}
 	
-	@RequestMapping(value="{id}", method=RequestMethod.GET)
+	@RequestMapping(value="/{id}", method=RequestMethod.GET)
 	public Optional<Role> findById(@PathVariable("id") Long id) {
 		return roleService.findById(id);
 	}
@@ -36,7 +36,7 @@ public class RoleController {
 		return roleService.save(entity);
 	}
 	
-	@RequestMapping(value="{id}", method=RequestMethod.DELETE)
+	@RequestMapping(value="/{id}", method=RequestMethod.DELETE)
 	public void deleteById(@PathVariable("id") Long id) {
 		roleService.deleteById(id);
 	}

@@ -26,7 +26,7 @@ public class AgreementController {
 		return (List<Agreement>) agreementService.findAll() ;
 	}
 	
-	@RequestMapping(value="{id}", method=RequestMethod.GET)
+	@RequestMapping(value="/{id}", method=RequestMethod.GET)
 	public Optional<Agreement> findById(@PathVariable("id") Long id) {
 		return agreementService.findById(id);
 	}
@@ -36,7 +36,7 @@ public class AgreementController {
 		return agreementService.save(entity);
 	}
 	
-	@RequestMapping(value="id", method=RequestMethod.DELETE)
+	@RequestMapping(value="/{id}", method=RequestMethod.DELETE)
 	public void deleteById(@PathVariable("id") Long id) {
 		agreementService.deleteById(id);
 	}

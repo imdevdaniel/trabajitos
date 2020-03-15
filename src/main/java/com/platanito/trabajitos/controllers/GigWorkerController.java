@@ -26,7 +26,7 @@ public class GigWorkerController {
 		return (List<GigWorker>) gigWorkerService.findAll() ;
 	}
 	
-	@RequestMapping(value="{id}", method=RequestMethod.GET)
+	@RequestMapping(value="/{id}", method=RequestMethod.GET)
 	public Optional<GigWorker> findById(@PathVariable("id") Long id) {
 		return gigWorkerService.findById(id);
 	}
@@ -36,7 +36,7 @@ public class GigWorkerController {
 		return gigWorkerService.save(entity);
 	}
 	
-	@RequestMapping(value="{id}", method=RequestMethod.DELETE)
+	@RequestMapping(value="/{id}", method=RequestMethod.DELETE)
 	public void deleteById(@PathVariable("id") Long id) {
 		gigWorkerService.deleteById(id);
 	}

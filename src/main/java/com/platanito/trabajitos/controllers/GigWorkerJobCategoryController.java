@@ -26,7 +26,7 @@ public class GigWorkerJobCategoryController {
 		return (List<GigWorkerJobCategory>) gigWorkerJobCategoryService.findAll() ;
 	}
 	
-	@RequestMapping(value="{id}", method=RequestMethod.GET)
+	@RequestMapping(value="/{id}", method=RequestMethod.GET)
 	public Optional<GigWorkerJobCategory> findById(@PathVariable("id") Long id) {
 		return gigWorkerJobCategoryService.findById(id);
 	}
@@ -36,7 +36,7 @@ public class GigWorkerJobCategoryController {
 		return gigWorkerJobCategoryService.save(entity);
 	}
 	
-	@RequestMapping(value="{id}", method=RequestMethod.DELETE)
+	@RequestMapping(value="/{id}", method=RequestMethod.DELETE)
 	public void deleteById(@PathVariable("id") Long id) {
 		gigWorkerJobCategoryService.deleteById(id);
 	}

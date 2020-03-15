@@ -26,7 +26,7 @@ public class JobCategoryController {
 		return (List<JobCategory>) jobCategoryService.findAll() ;
 	}
 	
-	@RequestMapping(value="{id}", method=RequestMethod.GET)
+	@RequestMapping(value="/{id}", method=RequestMethod.GET)
 	public Optional<JobCategory> findById(@PathVariable("id") Long id) {
 		return jobCategoryService.findById(id);
 	}
@@ -36,7 +36,7 @@ public class JobCategoryController {
 		return jobCategoryService.save(entity);
 	}
 	
-	@RequestMapping(value="{id}", method=RequestMethod.DELETE)
+	@RequestMapping(value="/{id}", method=RequestMethod.DELETE)
 	public void deleteById(@PathVariable("id") Long id) {
 		jobCategoryService.deleteById(id);
 	}

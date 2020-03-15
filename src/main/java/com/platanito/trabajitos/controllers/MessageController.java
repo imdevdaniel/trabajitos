@@ -26,7 +26,7 @@ public class MessageController {
 		return (List<Message>) messageService.findAll() ;
 	}
 	
-	@RequestMapping(value="{id}", method=RequestMethod.GET)
+	@RequestMapping(value="/{id}", method=RequestMethod.GET)
 	public Optional<Message> findById(@PathVariable("id") Long id) {
 		return messageService.findById(id);
 	}
@@ -36,7 +36,7 @@ public class MessageController {
 		return messageService.save(entity);
 	}
 	
-	@RequestMapping(value="{id}", method=RequestMethod.DELETE)
+	@RequestMapping(value="/{id}", method=RequestMethod.DELETE)
 	public void deleteById(@PathVariable("id") Long id) {
 		messageService.deleteById(id);
 	}

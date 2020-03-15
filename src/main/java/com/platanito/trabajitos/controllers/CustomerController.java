@@ -26,7 +26,7 @@ public class CustomerController {
 		return (List<Customer>) customerService.findAll() ;
 	}
 	
-	@RequestMapping(value="{id}", method=RequestMethod.GET)
+	@RequestMapping(value="/{id}", method=RequestMethod.GET)
 	public Optional<Customer> findById(@PathVariable("id") Long id) {
 		return customerService.findById(id);
 	}
@@ -36,7 +36,7 @@ public class CustomerController {
 		return customerService.save(entity);
 	}
 	
-	@RequestMapping(value="{id}", method=RequestMethod.DELETE)
+	@RequestMapping(value="/{id}", method=RequestMethod.DELETE)
 	public void deleteById(@PathVariable("id") Long id) {
 		customerService.deleteById(id);
 	}
