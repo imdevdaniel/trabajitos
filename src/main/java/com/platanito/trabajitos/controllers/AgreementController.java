@@ -17,26 +17,26 @@ import com.platanito.trabajitos.models.entities.Agreement;
 public class AgreementController {
 	
 	@Autowired
-	private AgreementService AgreementService;
+	private AgreementService agreementService;
 	
-	@RequestMapping(value="/list", method=RequestMethod.GET)
+	@RequestMapping(value="", method=RequestMethod.GET)
 	public List<Agreement> getList() {
-		return (List<Agreement>) AgreementService.findAll() ;
+		return (List<Agreement>) agreementService.findAll() ;
 	}
 	
-	@RequestMapping(value="/find-single", method=RequestMethod.GET)
+	@RequestMapping(value="{id}", method=RequestMethod.GET)
 	public Optional<Agreement> findById(Long id) {
-		return AgreementService.findById(id);
+		return agreementService.findById(id);
 	}
 	
-	@RequestMapping(value="/save", method=RequestMethod.POST)
+	@RequestMapping(value="", method=RequestMethod.POST)
 	public Agreement save(Agreement entity) {
-		return AgreementService.save(entity);
+		return agreementService.save(entity);
 	}
 	
-	@RequestMapping(value="/delete", method=RequestMethod.DELETE)
+	@RequestMapping(value="id", method=RequestMethod.DELETE)
 	public void deleteById(Long id) {
-		AgreementService.deleteById(id);
+		agreementService.deleteById(id);
 	}
 
 }

@@ -17,26 +17,26 @@ import com.platanito.trabajitos.models.entities.Review;
 public class ReviewController {
 	
 	@Autowired
-	private ReviewService ReviewService;
+	private ReviewService reviewService;
 	
-	@RequestMapping(value="/list", method=RequestMethod.GET)
+	@RequestMapping(value="", method=RequestMethod.GET)
 	public List<Review> getList() {
-		return (List<Review>) ReviewService.findAll() ;
+		return (List<Review>) reviewService.findAll() ;
 	}
 	
-	@RequestMapping(value="/find-single", method=RequestMethod.GET)
+	@RequestMapping(value="{id}", method=RequestMethod.GET)
 	public Optional<Review> findById(Long id) {
-		return ReviewService.findById(id);
+		return reviewService.findById(id);
 	}
 	
-	@RequestMapping(value="/save", method=RequestMethod.POST)
+	@RequestMapping(value="", method=RequestMethod.POST)
 	public Review save(Review entity) {
-		return ReviewService.save(entity);
+		return reviewService.save(entity);
 	}
 	
-	@RequestMapping(value="/delete", method=RequestMethod.DELETE)
+	@RequestMapping(value="{id}", method=RequestMethod.DELETE)
 	public void deleteById(Long id) {
-		ReviewService.deleteById(id);
+		reviewService.deleteById(id);
 	}
 
 }

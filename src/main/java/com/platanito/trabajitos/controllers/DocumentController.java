@@ -17,26 +17,26 @@ import com.platanito.trabajitos.models.entities.Document;
 public class DocumentController {
 	
 	@Autowired
-	private DocumentService DocumentService;
+	private DocumentService documentService;
 	
-	@RequestMapping(value="/list", method=RequestMethod.GET)
+	@RequestMapping(value="", method=RequestMethod.GET)
 	public List<Document> getList() {
-		return (List<Document>) DocumentService.findAll() ;
+		return (List<Document>) documentService.findAll() ;
 	}
 	
-	@RequestMapping(value="/find-single", method=RequestMethod.GET)
+	@RequestMapping(value="{id}", method=RequestMethod.GET)
 	public Optional<Document> findById(Long id) {
-		return DocumentService.findById(id);
+		return documentService.findById(id);
 	}
 	
-	@RequestMapping(value="/save", method=RequestMethod.POST)
+	@RequestMapping(value="", method=RequestMethod.POST)
 	public Document save(Document entity) {
-		return DocumentService.save(entity);
+		return documentService.save(entity);
 	}
 	
-	@RequestMapping(value="/delete", method=RequestMethod.DELETE)
+	@RequestMapping(value="{id}", method=RequestMethod.DELETE)
 	public void deleteById(Long id) {
-		DocumentService.deleteById(id);
+		documentService.deleteById(id);
 	}
 
 }

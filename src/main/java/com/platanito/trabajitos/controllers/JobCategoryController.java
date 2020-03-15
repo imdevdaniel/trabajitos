@@ -17,26 +17,26 @@ import com.platanito.trabajitos.models.entities.JobCategory;
 public class JobCategoryController {
 	
 	@Autowired
-	private JobCategoryService JobCategoryService;
+	private JobCategoryService jobCategoryService;
 	
-	@RequestMapping(value="/list", method=RequestMethod.GET)
+	@RequestMapping(value="", method=RequestMethod.GET)
 	public List<JobCategory> getList() {
-		return (List<JobCategory>) JobCategoryService.findAll() ;
+		return (List<JobCategory>) jobCategoryService.findAll() ;
 	}
 	
-	@RequestMapping(value="/find-single", method=RequestMethod.GET)
+	@RequestMapping(value="{id}", method=RequestMethod.GET)
 	public Optional<JobCategory> findById(Long id) {
-		return JobCategoryService.findById(id);
+		return jobCategoryService.findById(id);
 	}
 	
-	@RequestMapping(value="/save", method=RequestMethod.POST)
+	@RequestMapping(value="", method=RequestMethod.POST)
 	public JobCategory save(JobCategory entity) {
-		return JobCategoryService.save(entity);
+		return jobCategoryService.save(entity);
 	}
 	
-	@RequestMapping(value="/delete", method=RequestMethod.DELETE)
+	@RequestMapping(value="{id}", method=RequestMethod.DELETE)
 	public void deleteById(Long id) {
-		JobCategoryService.deleteById(id);
+		jobCategoryService.deleteById(id);
 	}
 
 }
