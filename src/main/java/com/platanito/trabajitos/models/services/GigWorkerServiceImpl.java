@@ -35,4 +35,9 @@ public class GigWorkerServiceImpl implements GigWorkerService {
 	public void deleteById(Long id) {
 		repository.deleteById(id);
 	};
+	
+	@Override
+	public List<GigWorker> findByPhone(String phoneNumber) {
+		return (List<GigWorker>) repository.findByPhone(phoneNumber);
+	}
 }

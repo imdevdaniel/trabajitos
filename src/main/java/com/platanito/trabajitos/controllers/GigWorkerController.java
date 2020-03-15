@@ -40,5 +40,10 @@ public class GigWorkerController {
 	public void deleteById(@PathVariable("id") Long id) {
 		gigWorkerService.deleteById(id);
 	}
+	
+	@RequestMapping(value="/search/{phone}", method=RequestMethod.GET)
+	public List<GigWorker> findByPhone(@PathVariable("phone") String phoneNumber) {
+		return gigWorkerService.findByPhone(phoneNumber);
+	}
 
 }

@@ -16,5 +16,7 @@ public interface GigWorkerService {
 	public void delete(GigWorker entity);
 
 	public void deleteById(Long id);
+
+	public List<GigWorker> findByPhone(String phoneNumber);
 	
 }
