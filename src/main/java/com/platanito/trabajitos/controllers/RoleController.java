@@ -15,27 +15,27 @@ import com.platanito.trabajitos.models.entities.Role;
 
 
 @RestController
-@RequestMapping("/api/v1/role")
+@RequestMapping("/api/v1/roles")
 public class RoleController {
-	
+
 	@Autowired
 	private RoleService roleService;
-	
+
 	@RequestMapping(value="", method=RequestMethod.GET)
 	public List<Role> getList() {
 		return (List<Role>) roleService.findAll() ;
 	}
-	
+
 	@RequestMapping(value="/{id}", method=RequestMethod.GET)
 	public Optional<Role> findById(@PathVariable("id") Long id) {
 		return roleService.findById(id);
 	}
-	
+
 	@RequestMapping(value="", method=RequestMethod.POST)
 	public Role save(@RequestBody Role entity) {
 		return roleService.save(entity);
 	}
-	
+
 	@RequestMapping(value="/{id}", method=RequestMethod.DELETE)
 	public void deleteById(@PathVariable("id") Long id) {
 		roleService.deleteById(id);

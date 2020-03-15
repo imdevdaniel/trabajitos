@@ -15,27 +15,27 @@ import com.platanito.trabajitos.models.entities.JobCategory;
 
 
 @RestController
-@RequestMapping("/api/v1/job-category")
+@RequestMapping("/api/v1/job-categories")
 public class JobCategoryController {
-	
+
 	@Autowired
 	private JobCategoryService jobCategoryService;
-	
+
 	@RequestMapping(value="", method=RequestMethod.GET)
 	public List<JobCategory> getList() {
 		return (List<JobCategory>) jobCategoryService.findAll() ;
 	}
-	
+
 	@RequestMapping(value="/{id}", method=RequestMethod.GET)
 	public Optional<JobCategory> findById(@PathVariable("id") Long id) {
 		return jobCategoryService.findById(id);
 	}
-	
+
 	@RequestMapping(value="", method=RequestMethod.POST)
 	public JobCategory save(@RequestBody JobCategory entity) {
 		return jobCategoryService.save(entity);
 	}
-	
+
 	@RequestMapping(value="/{id}", method=RequestMethod.DELETE)
 	public void deleteById(@PathVariable("id") Long id) {
 		jobCategoryService.deleteById(id);

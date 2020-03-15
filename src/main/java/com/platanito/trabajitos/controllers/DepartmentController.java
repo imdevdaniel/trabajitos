@@ -15,27 +15,27 @@ import com.platanito.trabajitos.models.entities.Department;
 
 
 @RestController
-@RequestMapping("/api/v1/department")
+@RequestMapping("/api/v1/departments")
 public class DepartmentController {
-	
+
 	@Autowired
 	private DepartmentService departmentService;
-	
+
 	@RequestMapping(value="", method=RequestMethod.GET)
 	public List<Department> getList() {
 		return (List<Department>) departmentService.findAll() ;
 	}
-	
+
 	@RequestMapping(value="/{id}", method=RequestMethod.GET)
 	public Optional<Department> findById(@PathVariable("id") Long id) {
 		return departmentService.findById(id);
 	}
-	
+
 	@RequestMapping(value="", method=RequestMethod.POST)
 	public Department save(@RequestBody Department entity) {
 		return departmentService.save(entity);
 	}
-	
+
 	@RequestMapping(value="/{id}", method=RequestMethod.DELETE)
 	public void deleteById(@PathVariable("id") Long id) {
 		departmentService.deleteById(id);

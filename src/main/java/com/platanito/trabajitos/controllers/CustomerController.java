@@ -15,27 +15,27 @@ import com.platanito.trabajitos.models.entities.Customer;
 
 
 @RestController
-@RequestMapping("/api/v1/customer")
+@RequestMapping("/api/v1/customers")
 public class CustomerController {
-	
+
 	@Autowired
 	private CustomerService customerService;
-	
+
 	@RequestMapping(value="", method=RequestMethod.GET)
 	public List<Customer> getList() {
 		return (List<Customer>) customerService.findAll() ;
 	}
-	
+
 	@RequestMapping(value="/{id}", method=RequestMethod.GET)
 	public Optional<Customer> findById(@PathVariable("id") Long id) {
 		return customerService.findById(id);
 	}
-	
+
 	@RequestMapping(value="", method=RequestMethod.POST)
 	public Customer save(@RequestBody Customer entity) {
 		return customerService.save(entity);
 	}
-	
+
 	@RequestMapping(value="/{id}", method=RequestMethod.DELETE)
 	public void deleteById(@PathVariable("id") Long id) {
 		customerService.deleteById(id);

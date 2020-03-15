@@ -15,27 +15,27 @@ import com.platanito.trabajitos.models.entities.User;
 
 
 @RestController
-@RequestMapping("/api/v1/user")
+@RequestMapping("/api/v1/users")
 public class UserController {
-	
+
 	@Autowired
 	private UserService userService;
-	
+
 	@RequestMapping(value="", method=RequestMethod.GET)
 	public List<User> getList() {
 		return (List<User>) userService.findAll() ;
 	}
-	
+
 	@RequestMapping(value="/{id}", method=RequestMethod.GET)
 	public Optional<User> findById(@PathVariable("id") Long id) {
 		return userService.findById(id);
 	}
-	
+
 	@RequestMapping(value="", method=RequestMethod.POST)
 	public User save(@RequestBody User entity) {
 		return userService.save(entity);
 	}
-	
+
 	@RequestMapping(value="/{id}", method=RequestMethod.DELETE)
 	public void deleteById(@PathVariable("id") Long id) {
 		userService.deleteById(id);

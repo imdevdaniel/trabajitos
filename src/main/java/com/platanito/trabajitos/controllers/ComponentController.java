@@ -15,27 +15,27 @@ import com.platanito.trabajitos.models.entities.Component;
 
 
 @RestController
-@RequestMapping("/api/v1/component")
+@RequestMapping("/api/v1/components")
 public class ComponentController {
-	
+
 	@Autowired
 	private ComponentService componentService;
-	
+
 	@RequestMapping(value="", method=RequestMethod.GET)
 	public List<Component> getList() {
 		return (List<Component>) componentService.findAll() ;
 	}
-	
+
 	@RequestMapping(value="/{id}", method=RequestMethod.GET)
 	public Optional<Component> findById(@PathVariable("id") Long id) {
 		return componentService.findById(id);
 	}
-	
+
 	@RequestMapping(value="", method=RequestMethod.POST)
 	public Component save(@RequestBody Component entity) {
 		return componentService.save(entity);
 	}
-	
+
 	@RequestMapping(value="/{id}", method=RequestMethod.DELETE)
 	public void deleteById(@PathVariable("id") Long id) {
 		componentService.deleteById(id);

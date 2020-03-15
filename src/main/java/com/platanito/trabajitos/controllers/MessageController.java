@@ -15,27 +15,27 @@ import com.platanito.trabajitos.models.entities.Message;
 
 
 @RestController
-@RequestMapping("/api/v1/message")
+@RequestMapping("/api/v1/messages")
 public class MessageController {
-	
+
 	@Autowired
 	private MessageService messageService;
-	
+
 	@RequestMapping(value="", method=RequestMethod.GET)
 	public List<Message> getList() {
 		return (List<Message>) messageService.findAll() ;
 	}
-	
+
 	@RequestMapping(value="/{id}", method=RequestMethod.GET)
 	public Optional<Message> findById(@PathVariable("id") Long id) {
 		return messageService.findById(id);
 	}
-	
+
 	@RequestMapping(value="", method=RequestMethod.POST)
 	public Message save(@RequestBody Message entity) {
 		return messageService.save(entity);
 	}
-	
+
 	@RequestMapping(value="/{id}", method=RequestMethod.DELETE)
 	public void deleteById(@PathVariable("id") Long id) {
 		messageService.deleteById(id);

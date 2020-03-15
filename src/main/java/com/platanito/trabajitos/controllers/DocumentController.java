@@ -15,27 +15,27 @@ import com.platanito.trabajitos.models.entities.Document;
 
 
 @RestController
-@RequestMapping("/api/v1/document")
+@RequestMapping("/api/v1/documents")
 public class DocumentController {
-	
+
 	@Autowired
 	private DocumentService documentService;
-	
+
 	@RequestMapping(value="", method=RequestMethod.GET)
 	public List<Document> getList() {
 		return (List<Document>) documentService.findAll() ;
 	}
-	
+
 	@RequestMapping(value="/{id}", method=RequestMethod.GET)
 	public Optional<Document> findById(@PathVariable("id") Long id) {
 		return documentService.findById(id);
 	}
-	
+
 	@RequestMapping(value="", method=RequestMethod.POST)
 	public Document save(@RequestBody Document entity) {
 		return documentService.save(entity);
 	}
-	
+
 	@RequestMapping(value="/{id}", method=RequestMethod.DELETE)
 	public void deleteById(@PathVariable("id") Long id) {
 		documentService.deleteById(id);

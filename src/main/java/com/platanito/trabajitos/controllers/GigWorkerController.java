@@ -15,27 +15,27 @@ import com.platanito.trabajitos.models.entities.GigWorker;
 
 
 @RestController
-@RequestMapping("/api/v1/gig-worker")
+@RequestMapping("/api/v1/gig-workers")
 public class GigWorkerController {
-	
+
 	@Autowired
 	private GigWorkerService gigWorkerService;
-	
+
 	@RequestMapping(value="", method=RequestMethod.GET)
 	public List<GigWorker> getList() {
 		return (List<GigWorker>) gigWorkerService.findAll() ;
 	}
-	
+
 	@RequestMapping(value="/{id}", method=RequestMethod.GET)
 	public Optional<GigWorker> findById(@PathVariable("id") Long id) {
 		return gigWorkerService.findById(id);
 	}
-	
+
 	@RequestMapping(value="", method=RequestMethod.POST)
 	public GigWorker save(@RequestBody GigWorker entity) {
 		return gigWorkerService.save(entity);
 	}
-	
+
 	@RequestMapping(value="/{id}", method=RequestMethod.DELETE)
 	public void deleteById(@PathVariable("id") Long id) {
 		gigWorkerService.deleteById(id);
